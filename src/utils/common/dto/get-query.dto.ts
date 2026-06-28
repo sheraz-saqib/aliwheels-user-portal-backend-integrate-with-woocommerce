@@ -30,4 +30,9 @@ export class GetQueryDto {
     'shop_manager',
   ])
   role?: string = 'all';
+
+  @IsOptional()
+  @Type(() => Number)
+  @IsNumber()
+  id?: number;
 }

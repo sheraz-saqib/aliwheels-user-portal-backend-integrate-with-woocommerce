@@ -3,6 +3,8 @@ import { AxiosService } from '../../utils/axios/axios.service';
 import { User } from './@types/user.interface';
 import { GetQueryDto } from '../../utils/common/dto/get-query.dto';
 import { GetResponseInterface } from '../../utils/response/get-response.interface';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -35,5 +37,21 @@ export class UsersService {
     }));
 
     return response;
+  }
+
+  async createUser(dto: CreateUserDto): Promise<User> {
+    return await this.axiosService.post<User>('/customers', dto);
+  }
+
+  async updateUser(query: GetQueryDto, dto: UpdateUserDto): Promise<User> {
+    return await this.axiosService.put<User>(`/customers/${query.id}`, dto);
+  }
+
+  async getUser(query: GetQueryDto): Promise<User> {
+    return await this.axiosService.get<User>(`/customers/${query.id}`);
+  }
+
+  async deleteUser(query: GetQueryDto): Promise<User> {
+    return await this.axiosService.delete<User>(`/customers/${query.id}`);
   }
 }
