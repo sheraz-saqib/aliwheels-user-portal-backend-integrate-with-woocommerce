@@ -7,12 +7,12 @@ import { validate } from './utils/validators/env.validation';
 
 @Module({
   imports: [
-    UsersModule,
     ConfigModule.forRoot({
       isGlobal: true,
       load: [AppConfig, ApiKeyConfig],
       validate: validate,
     }),
+    UsersModule,
   ],
   controllers: [],
   providers: [],

@@ -5,4 +5,5 @@ export interface ApiKey {
 
 export interface AppConfigType {
   apikey: ApiKey;
+  apiBaseUrl: string;
 }
