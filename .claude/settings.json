@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p product/dto product/@types variations/dto variations/@types categories/dto categories/@types tags/dto tags/@types attributes/dto attributes/@types attribute-terms/dto attribute-terms/@types shipping-classes/dto shipping-classes/@types reviews/dto reviews/@types)",
+      "Bash(mv products.controller.ts product/product.controller.ts)",
+      "Bash(mv products.service.ts product/product.service.ts)",
+      "Bash(mv dto/create-product.dto.ts product/dto/create-product.dto.ts)",
+      "Bash(mv dto/update-product.dto.ts product/dto/update-product.dto.ts)",
+      "Bash(npm install *)",
+      "Bash(npm approve-scripts *)",
+      "Bash(node -e \"const bcrypt=require\\('bcrypt'\\); bcrypt.hash\\('test',10\\).then\\(h=>console.log\\('OK',h\\)\\).catch\\(e=>console.error\\('FAIL',e.message\\)\\)\")"
+    ]
+  }
+}

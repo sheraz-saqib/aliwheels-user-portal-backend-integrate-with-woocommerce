@@ -70,7 +70,7 @@ export class AxiosService {
           hasPreviousPage: page > 1,
         },
       };
-    } catch (error) {
+    } catch (error : any) {
       throw catchHandler(error);
     }
   }
